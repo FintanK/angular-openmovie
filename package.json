@@ -30,6 +30,6 @@
     "time-grunt": "^1.0.0",
     "express": "4.2.x"
   },
-  "repository" : "http://github.com/FintanK/OpenMovie",
+  "repository" : "https://github.com/FintanK/angular-openmovie",
   "license" : "MIT"
 }
