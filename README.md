@@ -1,4 +1,4 @@
-# OpenMovie ![](https://travis-ci.org/FintanK/OpenMovie.svg?branch=master)
+# OpenMovie
 
 # Let's get started
 

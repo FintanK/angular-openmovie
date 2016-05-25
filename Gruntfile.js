@@ -90,8 +90,8 @@ module.exports = function(grunt) {
                 options: {
                     mangle: false
                 },
-//                src: 'public/js/production.js',
-//                dest: 'public/js/production.js'
+                src: 'public/js/production.js',
+                dest: 'public/js/production.js'
             }
         },
         notify: {
