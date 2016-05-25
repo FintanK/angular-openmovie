@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en" ng-app="OpenMovie">
+<head>
+    <meta charset="UTF-8">
+    <title>OpenMovie</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <meta name="description" content="An application that consumes data from the OpenMovie API">
+
+    <!-- Chrome for Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- OGP -->
+    <meta property="og:title" content="OpenMovie">
+    <meta property="og:description" content="An application that consumes data from the OpenMovie API">
+    <meta property="og:image" content="/img/logo.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="450">
+    <meta property="og:image:height" content="358">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter tags -->
+    <meta name="twitter:card" content="OpenMovie">
+    <meta name="”twitter:title”" content="”OpenMovie”">
+    <meta name="”twitter:description”" content="An application that consumes data from the OpenMovie API">
+    <meta name="”twitter:image”" content="OpenMovie.png">
+
+    <!-- IOS -->
+    <meta name="apple-mobile-web-app-title" content="OpenMovie">
+    <!-- New in iOS6 -->
+    <meta name='apple-mobile-web-app-capable' content='yes'>
+    <meta name='apple-touch-fullscreen' content='yes'>
+    <meta name='apple-mobile-web-app-status-bar-style' content='black'>
+    <meta name='format-detection' content='telephone=no'>
+
+
+    <!-- Dublin Core -->
+    <link rel="schema.DC" href="http://www.purl.org/dc/elements/1.1/"/>
+    <meta name="DC.title" content="OpenMovie"/>
+    <meta name="DC.creator" content="Fintan Kearney"/>
+    <meta name="DC.subject" content="An application that consumes data from the OpenMovie API"/>
+    <meta name="DC.description" content="An application that consumes data from the OpenMovie API"/>
+    <meta name="DC.publisher" content="Fintan Kearney"/>
+    <meta name="DC.contributor" content="Fintan Kearney"/>
+    <meta name="DC.date" scheme="W3CDTF" content="2016-06-28"/>
+    <meta name="DC.type" scheme="DCMIType" content="Text"/>
+    <meta name="DC.format" scheme="IMT" content="text/html"/>
+    <meta name="DC.identifier" content="/meta-tags/dublin/"/>
+    <meta name="DC.source" content="/meta-tags/"/>
+    <meta name="DC.language" scheme="RFC1766" content="en"/>
+    <meta name="DC.relation" content="/meta-tags/"/>
+    <meta name="DC.coverage" content="World"/>
+
+    <link rel="stylesheet" href="css/production.css">
+
+    <script type="text/javascript" async src="js/production.js"></script>
+
+</head>
+<body ng-controller="OpenMovieController" manifest="manifest.appcache">
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="row">
+            <form class="navbar-form navbar-left" role="search">
+                <label class="item-input-wrapper">
+                    <input ng-model="searchTerm" type="text" class="form-control" placeholder="Search by movie title.." >
+                </label>
+                <button class="button button-small" ng-click="search()">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="loader" ng-if="spinner"></div>
+
+    <div class="panel panel-default" ng-if="searchmovie">
+        <!-- Default panel contents -->
+        <div class="panel-heading">{{ result.Title }} </div>
+        <div class="panel-body">
+            <p>{{result.Plot}}</p>
+            <p><strong>IMDB Rating:</strong> ({{ result.imdbRating }})</p>
+            <img src="{{result.Poster}}" alt=""/>
+        </div>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <td>Year</td>
+                    <td>{{ result.Year }}</td>
+                </tr>
+                <tr>
+                    <td>Director</td>
+                    <td>{{result.Director}}</td>
+                </tr>
+                <tr>
+                    <td>Genre</td>
+                    <td>{{ result.Genre }}</td>
+                </tr>
+                <tr>
+                    <td>Language</td>
+                    <td>{{ result.Language }}</td>
+                </tr>
+                <tr>
+                    <td>Year</td>
+                    <td>{{ result.Year }}</td>
+                </tr>
+                <tr>
+                    <td>Actors</td>
+                    <td>{{ result.Actors }}</td>
+                </tr>
+                <tr>
+                    <td>Awards</td>
+                    <td>{{ result.Awards }}</td>
+                </tr>
+                <tr>
+                    <td>Country</td>
+                    <td>{{ result.Country }}</td>
+                </tr>
+                <tr>
+                    <td>Genre</td>
+                    <td>{{ result.Genre }}</td>
+                </tr>
+                <tr>
+                    <td>Rated</td>
+                    <td>{{ result.Rated }}</td>
+                </tr>
+                <tr>
+                    <td>Release Date</td>
+                    <td>{{ result.Released }}</td>
+                </tr>
+                <tr>
+                    <td>Running time</td>
+                    <td>{{ result.Runtime }}</td>
+                </tr>
+                <tr>
+                    <td>Writer</td>
+                    <td>{{ result.Writer }}</td>
+                </tr>
+                <tr>
+                    <td>Rotten Tomatoes Rating</td>
+                    <td>{{ result.tomatoRating }}</td>
+                </tr>
+                <tr>
+                    <td>Totten Tomatoes Review</td>
+                    <td><a href="{{result.tomatoURL}}" target="_blank">{{result.tomatoURL}}</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

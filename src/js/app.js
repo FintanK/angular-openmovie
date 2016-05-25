@@ -1,0 +1,1 @@
+var openMovie = angular.module('OpenMovie', []);

@@ -1,0 +1,11 @@
+node_modules
+.idea/
+atlassian-ide-plugin.xml
+.sass-cache/
+bowser_compnents/
+src/css/production.css
+src/css/production.css.map
+src/css/production.scss
+public/index.html
+public/css/production.css
+public/js/production.js
